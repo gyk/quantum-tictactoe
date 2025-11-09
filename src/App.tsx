@@ -270,6 +270,9 @@ function App() {
       );
     }
 
+    if (status.winners.length === 0) {
+      return "Game finished — Draw";
+    }
     const winnersSummary = status.winners
       .map((w) => `${PLAYER_LABEL[w.player]} +${w.points}`)
       .join(" ");

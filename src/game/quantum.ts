@@ -64,6 +64,9 @@ export class QuantumTicTacToe {
       return { kind: "awaitingMeasurement", ...this._awaitingMeasurement };
     const end = this.checkWinners();
     if (end) return { kind: "finished", winners: end };
+    // Draw condition: fewer than 2 empty squares remain and no winning lines
+    const empties = this.classical.reduce((acc, m) => acc + (m ? 0 : 1), 0);
+    if (empties < 2) return { kind: "finished", winners: [] };
     return {
       kind: "awaitingMove",
       player: this.currentPlayer,
