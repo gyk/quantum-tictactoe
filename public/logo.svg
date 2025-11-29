@@ -1,0 +1,175 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Quantum glow gradient -->
+    <radialGradient id="quantumGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ffff" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Superposition blur effect -->
+    <filter id="superposition" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+
+    <!-- Entanglement glow -->
+    <filter id="entanglementGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Animated dash pattern for entanglement lines -->
+    <linearGradient id="entanglementGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0a1e"/>
+      <stop offset="100%" stop-color="#1a1033"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" rx="20" fill="url(#bgGradient)"/>
+
+  <!-- Quantum glow background effect -->
+  <circle cx="200" cy="200" r="180" fill="url(#quantumGlow)" opacity="0. 5"/>
+
+  <!-- Grid lines with quantum glow -->
+  <g stroke="#4c1d95" stroke-width="3" filter="url(#entanglementGlow)">
+    <!-- Vertical lines -->
+    <line x1="155" y1="80" x2="155" y2="320"/>
+    <line x1="245" y1="80" x2="245" y2="320"/>
+    <!-- Horizontal lines -->
+    <line x1="80" y1="155" x2="320" y2="155"/>
+    <line x1="80" y1="245" x2="320" y2="245"/>
+  </g>
+
+  <!-- Entanglement connection lines (showing quantum links between cells) -->
+  <g stroke="url(#entanglementGradient)" stroke-width="2" stroke-dasharray="8,4" opacity="0.7" filter="url(#entanglementGlow)">
+    <!-- Curved entanglement lines connecting superposed states -->
+    <path d="M 117 117 Q 200 50 283 117" fill="none"/>
+    <path d="M 117 200 Q 50 200 117 283" fill="none"/>
+    <path d="M 283 200 Q 350 200 283 283" fill="none"/>
+  </g>
+
+  <!-- Cell 1 (top-left): Superposed X - showing quantum uncertainty -->
+  <g transform="translate(117, 117)">
+    <!-- Ghost X (superposition state 1) -->
+    <g opacity="0.4" filter="url(#superposition)" transform="translate(-8, -8)">
+      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#00ffff" stroke-width="6" stroke-linecap="round"/>
+      <line x1="20" y1="-20" x2="-20" y2="20" stroke="#00ffff" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <!-- Ghost X (superposition state 2) -->
+    <g opacity="0. 4" filter="url(#superposition)" transform="translate(8, 8)">
+      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#00ffff" stroke-width="6" stroke-linecap="round"/>
+      <line x1="20" y1="-20" x2="-20" y2="20" stroke="#00ffff" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <!-- Main X -->
+    <g filter="url(#entanglementGlow)">
+      <line x1="-22" y1="-22" x2="22" y2="22" stroke="#00ffff" stroke-width="7" stroke-linecap="round"/>
+      <line x1="22" y1="-22" x2="-22" y2="22" stroke="#00ffff" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <!-- Subscript number (quantum move notation) -->
+    <text x="28" y="30" font-family="Arial, sans-serif" font-size="14" fill="#00ffff" opacity="0.8">₁</text>
+  </g>
+
+  <!-- Cell 2 (top-center): Superposed O -->
+  <g transform="translate(200, 117)">
+    <!-- Ghost O states -->
+    <circle cx="-5" cy="-5" r="24" fill="none" stroke="#ec4899" stroke-width="5" opacity="0. 3" filter="url(#superposition)"/>
+    <circle cx="5" cy="5" r="24" fill="none" stroke="#ec4899" stroke-width="5" opacity="0.3" filter="url(#superposition)"/>
+    <!-- Main O -->
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#ec4899" stroke-width="6" filter="url(#entanglementGlow)"/>
+    <text x="28" y="30" font-family="Arial, sans-serif" font-size="14" fill="#ec4899" opacity="0.8">₂</text>
+  </g>
+
+  <!-- Cell 3 (top-right): Superposed X -->
+  <g transform="translate(283, 117)">
+    <g opacity="0.35" filter="url(#superposition)" transform="translate(-6, 6)">
+      <line x1="-18" y1="-18" x2="18" y2="18" stroke="#00ffff" stroke-width="5" stroke-linecap="round"/>
+      <line x1="18" y1="-18" x2="-18" y2="18" stroke="#00ffff" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <g filter="url(#entanglementGlow)">
+      <line x1="-22" y1="-22" x2="22" y2="22" stroke="#00ffff" stroke-width="7" stroke-linecap="round"/>
+      <line x1="22" y1="-22" x2="-22" y2="22" stroke="#00ffff" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <text x="28" y="30" font-family="Arial, sans-serif" font-size="14" fill="#00ffff" opacity="0.8">₃</text>
+  </g>
+
+  <!-- Cell 4 (middle-left): Quantum probability cloud (empty but with potential) -->
+  <g transform="translate(117, 200)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4,4" opacity="0. 5"/>
+    <circle cx="0" cy="0" r="12" fill="#8b5cf6" opacity="0. 2"/>
+    <!-- Quantum probability dots -->
+    <circle cx="-8" cy="-8" r="3" fill="#8b5cf6" opacity="0.6"/>
+    <circle cx="8" cy="8" r="3" fill="#8b5cf6" opacity="0.4"/>
+    <circle cx="10" cy="-6" r="2" fill="#8b5cf6" opacity="0.5"/>
+  </g>
+
+  <!-- Cell 5 (center): Psi symbol - the heart of quantum -->
+  <g transform="translate(200, 200)">
+    <text x="0" y="12" font-family="Times New Roman, serif" font-size="56" font-weight="bold" fill="url(#entanglementGradient)" text-anchor="middle" filter="url(#entanglementGlow)">Ψ</text>
+  </g>
+
+  <!-- Cell 6 (middle-right): Superposed O -->
+  <g transform="translate(283, 200)">
+    <circle cx="-4" cy="-4" r="22" fill="none" stroke="#ec4899" stroke-width="4" opacity="0.35" filter="url(#superposition)"/>
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#ec4899" stroke-width="6" filter="url(#entanglementGlow)"/>
+    <text x="28" y="30" font-family="Arial, sans-serif" font-size="14" fill="#ec4899" opacity="0.8">₄</text>
+  </g>
+
+  <!-- Cell 7 (bottom-left): Collapsed/measured O (solid, classical) -->
+  <g transform="translate(117, 283)">
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#ec4899" stroke-width="7" filter="url(#entanglementGlow)"/>
+    <!-- Measurement indicator -->
+    <circle cx="0" cy="0" r="8" fill="#ec4899" opacity="0.6"/>
+  </g>
+
+  <!-- Cell 8 (bottom-center): Wave function visualization -->
+  <g transform="translate(200, 283)">
+    <path d="M -30 0 Q -20 -20, -10 0 T 10 0 T 30 0" fill="none" stroke="#8b5cf6" stroke-width="3" opacity="0. 7" filter="url(#entanglementGlow)"/>
+    <path d="M -25 8 Q -15 -12, -5 8 T 15 8 T 25 8" fill="none" stroke="#00ffff" stroke-width="2" opacity="0. 5"/>
+  </g>
+
+  <!-- Cell 9 (bottom-right): Superposed X -->
+  <g transform="translate(283, 283)">
+    <g opacity="0.3" filter="url(#superposition)" transform="translate(5, -5)">
+      <line x1="-18" y1="-18" x2="18" y2="18" stroke="#00ffff" stroke-width="5" stroke-linecap="round"/>
+      <line x1="18" y1="-18" x2="-18" y2="18" stroke="#00ffff" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <g filter="url(#entanglementGlow)">
+      <line x1="-22" y1="-22" x2="22" y2="22" stroke="#00ffff" stroke-width="7" stroke-linecap="round"/>
+      <line x1="22" y1="-22" x2="-22" y2="22" stroke="#00ffff" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <text x="28" y="30" font-family="Arial, sans-serif" font-size="14" fill="#00ffff" opacity="0. 8">₅</text>
+  </g>
+
+  <!-- Orbiting quantum particles (representing superposition/uncertainty) -->
+  <g opacity="0.8">
+    <circle cx="60" cy="120" r="4" fill="#00ffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="340" cy="280" r="3" fill="#ec4899">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2. 5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="330" cy="70" r="3. 5" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0.5;1;0. 5" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="70" cy="330" r="3" fill="#00ffff">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Title text -->
+  <text x="200" y="375" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">
+    QUANTUM TIC-TAC-TOE
+  </text>
+</svg>
