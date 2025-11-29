@@ -1,6 +1,9 @@
 # Quantum Tic-Tac-Toe
 
-![Quantum Tic-Tac-Toe](./public/logo.svg)
+<div align="center">
+  <img src="./public/logo.svg" alt="Quantum Tic-Tac-Toe" style="width: 40%; max-width: 400px;">
+</div>
+<br/>
 
 A TypeScript + React implementation of [Quantum Tic-Tac-Toe](https://en.wikipedia.org/wiki/Quantum_tic-tac-toe), created by vibe coding. The game extends classic tic-tac-toe to conceptually model quantum phenomena such as superposition, entanglement, and collapse.
 
