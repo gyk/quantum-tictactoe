@@ -1,5 +1,10 @@
 # Quantum Tic-Tac-Toe
 
+<div align="center">
+  <img src="./public/logo.svg" alt="Quantum Tic-Tac-Toe" style="width: 40%; max-width: 400px;">
+</div>
+<br/>
+
 A TypeScript + React implementation of [Quantum Tic-Tac-Toe](https://en.wikipedia.org/wiki/Quantum_tic-tac-toe), created by vibe coding. The game extends classic tic-tac-toe to conceptually model quantum phenomena such as superposition, entanglement, and collapse.
 
 [Play online](https://gyk.github.io/quantum-tictactoe)
@@ -56,3 +61,4 @@ pnpm lint
 
 - This is a pure frontend app; it should run on desktop and mobile browsers.
 - Written by AI (mostly GPT-5).
+- Logo designed by AI (Claude Opus 4.5).
